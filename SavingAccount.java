@@ -8,11 +8,12 @@ package bankingaccount;
 import java.util.ArrayList;
 
 public class SavingAccount extends BankingAccount implements IInterest {
+
     private int interest;
 
     public SavingAccount(String accountNumber, String accountHolder, String openDate, String SSN, int accountHolderID, ArrayList<String> history, double bankFees, double balance, int interest) {
         super(accountNumber, accountHolder, openDate, SSN, accountHolderID, history, bankFees, balance);
-        
+
         this.interest = interest;
     }
 
@@ -22,10 +23,10 @@ public class SavingAccount extends BankingAccount implements IInterest {
         calculateInterestWithBalance();
         return super.balance;
     }
-    
+
     public void calculateInterestWithBalance() {
-       this.balance += this.balance * interest;
-    
+        this.balance += this.balance * interest;
+
     }
 
     @Override
@@ -33,8 +34,4 @@ public class SavingAccount extends BankingAccount implements IInterest {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
-    
-    
-    
 }

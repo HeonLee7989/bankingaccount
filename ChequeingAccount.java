@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Sher Khan
  */
-public class ChequeingAccount extends BankingAccount{
+public class ChequeingAccount extends BankingAccount {
 
     public ChequeingAccount(String accountNumber, String accountHolder, String openDate, String SSN, int accountHolderID, ArrayList<String> history, double bankFees, double balance) {
         super(accountNumber, accountHolder, openDate, SSN, accountHolderID, history, bankFees, balance);
@@ -22,6 +22,5 @@ public class ChequeingAccount extends BankingAccount{
         super.calculateBalanceWithFees();
         return super.balance;
     }
-    
-    
+
 }
