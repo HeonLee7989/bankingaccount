@@ -31,7 +31,7 @@ public class SavingAccount extends BankingAccount implements IInterest {
 
     @Override
     public void calculateInterestRate() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
 }
