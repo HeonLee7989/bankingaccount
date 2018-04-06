@@ -20,8 +20,8 @@ public abstract class BankingAccount {
     private int accountHolderID = 100; // intialized it 100\ 
     private ArrayList<String> history;
     private double bankFees;
-    protected double balance; //bc we access through othher classes inherited
-
+    private double balance; //bc we access through othher classes inherited
+    //We can use getter method for this
     //constructor 
     /**
      *
@@ -52,13 +52,13 @@ public abstract class BankingAccount {
      * @param amount
      * @return
      */
-    public double withdrawl(double amount) {
-        if (amount > 0) {
+    public boolean withdrawl(double amount) {
+        if (amount > 0 && balance >= amount) {
             balance = balance - amount;
+            return true;
         } else {
-            amount = 0;
+            return false;
         }
-        return amount;
     }
 
     //Deposit
@@ -67,19 +67,21 @@ public abstract class BankingAccount {
      * @param amount
      */
     public void deposit(double amount) {
-        balance = balance + amount;
+        if (amount >= 0) {
+            balance = balance + amount;
+        }
 
     }
 
-    // Transfer between account 
+    // Transfer between account
+    //Send money from this account to another account
     /**
      *
-     * @param sender
      * @param reciever
      * @param amount
      */
-    public void transfer(BankingAccount sender, BankingAccount reciever, double amount) {
-        sender.withdrawl(amount);
+    public void transfer(BankingAccount reciever, double amount) {
+        this.withdrawl(amount);
         reciever.deposit(amount);
 
     }
@@ -129,5 +131,12 @@ public abstract class BankingAccount {
         return this.bankFees;
     }
 
-    public abstract double getbalance();
+    public double getBalance() {
+        this.calculateBalanceWithFees();
+        return this.balance;
+    }
+    
+    public void setBalance(double amount) {
+        this.balance = amount;
+    }
 }

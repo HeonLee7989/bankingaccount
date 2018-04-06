@@ -17,15 +17,14 @@ public class SavingAccount extends BankingAccount implements IInterest {
         this.interest = interest;
     }
 
-    @Override
+    
     public double getbalance() {
-        super.calculateBalanceWithFees();
-        calculateInterestWithBalance();
-        return super.balance;
+        this.calculateInterestWithBalance();
+        return this.getBalance();
     }
 
     public void calculateInterestWithBalance() {
-        this.balance += this.balance * interest;
+        this.setBalance(this.getBalance() * interest);
 
     }
 

@@ -19,11 +19,10 @@ public class ChequeingAccount extends BankingAccount {
         super(accountNumber, accountHolder, openDate, SSN, accountHolderID, 
                 history, bankFees, balance);
     }
-
-    @Override
+    
+    
     public double getbalance() {
-        super.calculateBalanceWithFees();
-        return super.balance;
+        return this.getBalance();
     }
 
 }
