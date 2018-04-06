@@ -7,12 +7,11 @@ package bankingaccount;
 
 /**
  *
- * @author Sher Khan
+ * @author Sher Khan, Heon Lee
  */
 public class bankTest {
 
     public static void main(String args[]) {
-
     }
 
 }
