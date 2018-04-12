@@ -10,7 +10,10 @@ package bankingaccount;
  * @author Sher Khan
  */
 public interface IInterest {
-
-    public void calculateInterestRate();
-
+  
+   
+  
+   public void calculateInterestWithBalance();
+    
+    
 }

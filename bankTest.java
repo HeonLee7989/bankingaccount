@@ -7,11 +7,14 @@ package bankingaccount;
 
 /**
  *
- * @author Sher Khan, Heon Lee
+ * @author Sher Khan
  */
 public class bankTest {
-
-    public static void main(String args[]) {
-    }
-
+    public static void main (String args[]) { 
+        ChequeingAccount a = new ChequeingAccount("123456", "23456",
+                "01.03.2016","100202020",234567,4.0,10.0);
+          System.out.println(a.getbalance());
+        
+                }
+    
 }

@@ -11,18 +11,34 @@ import java.util.ArrayList;
  *
  * @author Sher Khan
  */
-public class ChequeingAccount extends BankingAccount {
-
-    public ChequeingAccount(String accountNumber, String accountHolder, 
-            String openDate, String SSN, int accountHolderID, 
-            ArrayList<String> history, double bankFees, double balance) {
-        super(accountNumber, accountHolder, openDate, SSN, accountHolderID, 
-                history, bankFees, balance);
+public class ChequeingAccount extends BankingAccount{
+    static ArrayList<BankingAccount> accounts = new ArrayList<BankingAccount>();
+    
+    /**
+     *  
+     * @param accountNumber
+     * @param accountHolder
+     * @param openDate
+     * @param SSN
+     * @param accountHolderID
+     * @param bankFees
+     * @param balance 
+     */
+    public ChequeingAccount(String accountNumber, String accountHolder, String openDate, String SSN, int accountHolderID, double bankFees, double balance) {
+        super(accountNumber, accountHolder, openDate, SSN, accountHolderID, bankFees, balance);
     }
     
     
+    /**
+     * 
+     * @return balance
+     */
+  
+    @Override
     public double getbalance() {
-        return this.getBalance();
+        super.calculateBalanceWithFees();
+        return super.balance;
     }
-
+    
+    
 }
